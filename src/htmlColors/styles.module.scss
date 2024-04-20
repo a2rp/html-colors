@@ -1,0 +1,99 @@
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 12px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+
+    .main {
+        width: 100%;
+        max-width: 1400px;
+        padding: 30px;
+
+        .heading {
+            font-size: 20px;
+            font-weight: 900;
+        }
+
+        .subheading {
+            margin-top: 30px;
+            font-weight: 900;
+        }
+
+        ul.predefinedColorList {
+            list-style-type: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .color {
+                // padding: 5px 20px;
+                cursor: pointer;
+                border: 1px soid #f00;
+            }
+        }
+
+        .otherColors {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 30px;
+
+            @media only screen and (width<800px) {
+                flex-wrap: wrap;
+            }
+
+            .rangeContainer,
+            .colorValuesContainer {
+                // border: 1px solid #000;
+                width: 100%;
+            }
+
+            .rangeContainer {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+
+                .redContainer,
+                .greenContainer,
+                .blueContainer {
+                    // display: flex;
+                    // flex-direction: column;
+                    // gap: 5px;
+
+                    .redColorRange,
+                    .greenColorRange,
+                    .blueColorRange {
+                        // display: block;
+                        width: 100%;
+                    }
+                }
+            }
+
+            .colorValuesContainer {
+                background-color: aliceblue;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                .name,
+                .rgb,
+                .hex,
+                .hsl {
+                    color: #fff;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 5px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                }
+            }
+        }
+    }
+}
