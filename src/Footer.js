@@ -1,0 +1,6 @@
+import { FaGithub, FaLinkedin, FaYoutube } from 'react-icons/fa6';
+import { FiCode, FiFacebook, FiHeart, FiMail, FiUser } from 'react-icons/fi';
+import './Footer.css';
+const links = [['Portfolio', 'https://www.ashishranjan.net', FiUser], ['GitHub', 'https://github.com/a2rp', FaGithub], ['CodePen', 'https://codepen.io/ash1198', FiCode], ['LinkedIn', 'https://www.linkedin.com/in/aashishranjan', FaLinkedin], ['Facebook', 'https://www.facebook.com/theash.ashish/', FiFacebook], ['YouTube', 'https://www.youtube.com/@ashishranjan-ashz?sub_confirmation=1', FaYoutube], ['Email', 'mailto:ash.ranjan09@gmail.com', FiMail]];
+const support = [['Support', 'https://a2rp-donation-page.netlify.app/'], ['Buy Me a Coffee', 'https://buymeacoffee.com/a2rp'], ['Patreon', 'https://patreon.com/a2rp']];
+export default function Footer() { return <footer className="site-footer"><nav>{links.map(([label, href, Icon]) => <a key={label} href={href} target="_blank" rel="noopener noreferrer"><Icon />{label}</a>)}</nav><nav>{support.map(([label, href]) => <a key={label} href={href} target="_blank" rel="noopener noreferrer"><FiHeart />{label}</a>)}</nav><small>Copyright &copy; {new Date().getFullYear()} <a href="https://www.ashishranjan.net" target="_blank" rel="noopener noreferrer">Ashish Ranjan</a></small></footer>; }
