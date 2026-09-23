@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.scss";
 import predefinedColors from "./predefinedColors.json";
-import { Button, Tooltip } from "@mui/material";
+import { Button } from "@mui/material";
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import CopyToClipboard from 'react-copy-to-clipboard';
 import { toast } from "react-toastify";
@@ -11,26 +11,22 @@ const HtmlColors = () => {
     const [redColorValue, setRedColorValue] = useState(70);
     const [greenColorValue, setGreenColorValue] = useState(70);
     const [blueColorValue, setBlueColorValue] = useState(70);
-    const [nameColorValue, setNameColorValue] = useState(0);
+    const [nameColorValue, setNameColorValue] = useState("");
     const [rgbColorValue, setRgbColorValue] = useState(0);
     const [hexColorValue, setHexColorValue] = useState(0);
     const [hslColorValue, setHslColorValue] = useState(0);
-
-    // function hexToRgb(hex, result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex.toLowerCase())) {
-    //     return result ? result.map(i => parseInt(i, 16)).slice(1) : null
-    // }
 
     function hexToRGB(h) {
         let r = 0, g = 0, b = 0;
 
         // 3 digits
-        if (h.length == 4) {
+        if (h.length === 4) {
             r = "0x" + h[1] + h[1];
             g = "0x" + h[2] + h[2];
             b = "0x" + h[3] + h[3];
 
             // 6 digits
-        } else if (h.length == 7) {
+        } else if (h.length === 7) {
             r = "0x" + h[1] + h[2];
             g = "0x" + h[3] + h[4];
             b = "0x" + h[5] + h[6];
@@ -67,13 +63,13 @@ const HtmlColors = () => {
 
         // Calculate hue
         // No difference
-        if (delta == 0)
+        if (delta === 0)
             h = 0;
         // Red is max
-        else if (cmax == r)
+        else if (cmax === r)
             h = ((g - b) / delta) % 6;
         // Green is max
-        else if (cmax == g)
+        else if (cmax === g)
             h = (b - r) / delta + 2;
         // Blue is max
         else
@@ -89,7 +85,7 @@ const HtmlColors = () => {
         l = (cmax + cmin) / 2;
 
         // Calculate saturation
-        s = delta == 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
+        s = delta === 0 ? 0 : delta / (1 - Math.abs(2 * l - 1));
 
         // Multiply l and s by 100
         s = +(s * 100).toFixed(1);
@@ -105,7 +101,6 @@ const HtmlColors = () => {
         rgb = rgb.split("rgb(")[1];
         rgb = rgb.split(")")[0];
         rgb = rgb.split(",");
-        // console.log(hex, rgb, "rgb");
         setRedColorValue(parseInt(rgb[0]));
         setGreenColorValue(parseInt(rgb[1]));
         setBlueColorValue(parseInt(rgb[2]));
@@ -122,20 +117,19 @@ const HtmlColors = () => {
         setHslColorValue(hslValue);
 
         const presentObject = predefinedColors.filter(color => color.value.toLowerCase() === hexValue);
-        // console.log(presentObject, "presentobjecy");
         if (presentObject.length > 0) {
             setNameColorValue(presentObject[0].name);
         } else {
             setNameColorValue("");
         }
 
-        // console.log(rgbValue, hexValue, hslValue);
     }, [redColorValue, greenColorValue, blueColorValue]);
 
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="colors">
             <div className={styles.main}>
-                <div className={styles.heading}>Html colors</div>
+                <h1 className={styles.heading}>HTML colors</h1>
+                <p className={styles.intro}>Explore a palette, adjust RGB channels, and copy the color in the format you need.</p>
                 <div className={styles.subheading}>Predefined colors</div>
                 <ul className={styles.predefinedColorList}>
                     {predefinedColors && predefinedColors.map((color, index) => (
@@ -147,7 +141,7 @@ const HtmlColors = () => {
                             title={`${color.name} - ${color.value}`}
                         >
                             {/* <Tooltip className={styles.tooltip} title={`${color.name} - ${color.value}`}> */}
-                            <Button size="small" className={styles.colorButton} sx={{ color: "#000", padding: "5px 15px" }}>
+                            <Button onClick={() => setSelectedColor(color)} size="small" className={styles.colorButton} sx={{ color: "#000", padding: "5px 15px" }}>
                                 {color.name}
                             </Button>
                             {/* </Tooltip> */}
@@ -183,7 +177,7 @@ const HtmlColors = () => {
                         </div>
                     </div>
 
-                    <div className={styles.colorValuesContainer} style={{ backgroundColor: rgbColorValue }}>
+                    <div className={styles.colorValuesContainer} id="converter" style={{ backgroundColor: rgbColorValue }}>
                         <h3 className={styles.name}>
                             Name - {nameColorValue}
                             <CopyToClipboard text={rgbColorValue}>

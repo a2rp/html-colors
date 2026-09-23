@@ -1,6 +1,6 @@
-.site-footer { display:flex; justify-content:center; gap:1.25rem; flex-wrap:wrap; align-items:center; padding:1.5rem; background:#111827; color:#cbd5e1; font-size:.85rem; }
-.site-footer nav { display:flex; gap:1rem; flex-wrap:wrap; }
-.site-footer a { display:inline-flex; align-items:center; gap:.35rem; color:inherit; text-decoration:none; transition:color .2s, transform .2s; }
-.site-footer a:hover { color:#fff; transform:translateY(-2px); }
-.site-footer small { flex-basis:100%; text-align:center; }
-.site-footer small a { display:inline; color:#fff; }
+.site-footer { width:min(1280px,calc(100% - 40px)); margin:0 auto; padding:24px 0 28px; border-top:1px solid #ffffff1c; color:#a8b4c7; }
+.site-footer__top { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.site-footer__brand { display:inline-flex; align-items:center; gap:9px; color:#fff; }.site-footer__brand img { width:32px; height:32px; border:1px solid #ffffff24; border-radius:8px; }
+.site-footer__links { display:flex; flex-wrap:wrap; gap:7px; }.site-footer__links a { width:35px; height:35px; display:grid; place-items:center; color:#a8b4c7; border:1px solid #ffffff1c; border-radius:8px; text-decoration:none; transition:color .18s,border-color .18s,box-shadow .18s; }.site-footer__links a:hover,.site-footer__links a:focus-visible { color:#fff; border-color:#a5b4fc88; box-shadow:0 0 0 3px #a5b4fc18; outline:none; }
+.site-footer__copyright { display:block; margin-top:16px; padding-top:14px; border-top:1px solid #ffffff12; }.site-footer__copyright a { color:#fff; }
+.top-button { position:fixed; right:22px; bottom:22px; z-index:15; width:42px; height:42px; display:grid; place-items:center; color:#fff; background:#1b2638; border:1px solid #a5b4fc88; border-radius:999px; cursor:pointer; opacity:0; pointer-events:none; transition:opacity .18s,border-color .18s,box-shadow .18s; }.top-button.is-visible { opacity:1; pointer-events:auto; }.top-button:hover,.top-button:focus-visible { border-color:#fff; box-shadow:0 0 0 4px #a5b4fc20; outline:none; }

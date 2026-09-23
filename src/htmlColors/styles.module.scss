@@ -1,99 +1,13 @@
-*,
-::before,
-::after {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-size: 12px;
-}
-
-.container {
-    display: flex;
-    justify-content: center;
-
-    .main {
-        width: 100%;
-        max-width: 1400px;
-        padding: 30px;
-
-        .heading {
-            font-size: 20px;
-            font-weight: 900;
-        }
-
-        .subheading {
-            margin-top: 30px;
-            font-weight: 900;
-        }
-
-        ul.predefinedColorList {
-            list-style-type: none;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-
-            .color {
-                // padding: 5px 20px;
-                cursor: pointer;
-                border: 1px soid #f00;
-            }
-        }
-
-        .otherColors {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            margin-top: 30px;
-
-            @media only screen and (width<800px) {
-                flex-wrap: wrap;
-            }
-
-            .rangeContainer,
-            .colorValuesContainer {
-                // border: 1px solid #000;
-                width: 100%;
-            }
-
-            .rangeContainer {
-                display: flex;
-                flex-direction: column;
-                gap: 30px;
-
-                .redContainer,
-                .greenContainer,
-                .blueContainer {
-                    // display: flex;
-                    // flex-direction: column;
-                    // gap: 5px;
-
-                    .redColorRange,
-                    .greenColorRange,
-                    .blueColorRange {
-                        // display: block;
-                        width: 100%;
-                    }
-                }
-            }
-
-            .colorValuesContainer {
-                background-color: aliceblue;
-                padding: 15px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-
-                .name,
-                .rgb,
-                .hex,
-                .hsl {
-                    color: #fff;
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 5px;
-                    background-color: rgba(0, 0, 0, 0.5);
-                }
-            }
-        }
-    }
-}
+.container { min-height:calc(100vh - 120px); padding:108px 0 48px; color:#e7edf7; background:radial-gradient(circle at 8% 0%,#28345a55,transparent 28rem),#0b1220; }
+.main { width:min(1280px,calc(100% - 40px)); margin:0 auto; }
+.heading { font-size:clamp(2.5rem,6vw,5.4rem); line-height:.95; letter-spacing:-.06em; font-weight:800; }
+.intro { max-width:620px; margin:18px 0 0; color:#aab8cc; font-size:1rem; line-height:1.7; }
+.subheading { margin-top:52px; color:#a5b4fc; font-size:.76rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+.predefinedColorList { display:grid; grid-template-columns:repeat(auto-fill,minmax(135px,1fr)); gap:10px; padding:0; margin:18px 0 0; list-style:none; }
+.color { min-height:58px; display:grid; place-items:center; border:1px solid #ffffff20; border-radius:11px; overflow:hidden; cursor:pointer; transition:border-color .18s,box-shadow .18s; }.color:hover { border-color:#fff; box-shadow:0 0 0 4px #ffffff18; }.colorButton { width:100%; height:100%; font-size:.76rem!important; text-transform:none!important; }
+.otherColors { display:grid; grid-template-columns:minmax(0,1fr) minmax(320px,1fr); gap:18px; margin-top:34px; }
+.rangeContainer,.colorValuesContainer { min-width:0; padding:22px; border:1px solid #ffffff1c; border-radius:14px; background:#111b2b; box-shadow:0 15px 40px #0003; }
+.rangeContainer { display:grid; gap:22px; }.redContainer,.greenContainer,.blueContainer { display:grid; gap:8px; }.redContainer label,.greenContainer label,.blueContainer label { color:#dbe6f5; font-weight:700; }.redColorRange,.greenColorRange,.blueColorRange { width:100%; accent-color:#a5b4fc; cursor:pointer; }
+.colorValuesContainer { min-height:250px; display:flex; flex-direction:column; justify-content:space-between; background-image:linear-gradient(135deg,#0003,#0000); }.name,.rgb,.hex,.hsl { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:0; padding:11px 12px; border:1px solid #ffffff1c; border-radius:9px; color:#fff; background:#0008; font-size:.95rem; }.name svg,.rgb svg,.hex svg,.hsl svg { flex:0 0 auto; }
+@media (max-width:800px) { .otherColors { grid-template-columns:1fr; } }.otherColors button { cursor:pointer; }
+@media (max-width:520px) { .container { padding-top:96px; }.main { width:calc(100% - 28px); }.predefinedColorList { grid-template-columns:repeat(2,1fr); }.otherColors { gap:12px; }.rangeContainer,.colorValuesContainer { padding:16px; } }

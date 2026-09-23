@@ -5,6 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #0b1220;
+  color: #e7edf7;
+}
+
+button,
+input {
+  font: inherit;
 }
 
 code {
