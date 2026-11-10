@@ -1,7 +1,8 @@
 {
-  "name": "frontend",
+  "name": "html-colors",
   "version": "0.1.0",
   "private": true,
+  "description": "Browse CSS named colors and convert custom RGB values to HEX and HSL.",
   "homepage": "https://a2rp.github.io/html-colors",
   "dependencies": {
     "@emotion/react": "^11.11.4",

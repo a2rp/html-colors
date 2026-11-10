@@ -2,14 +2,15 @@
 
 ![HTML Colors preview](screenshot.png)
 
-A responsive React color explorer and converter for browsing predefined colors, adjusting RGB channels, and copying RGB, HEX, HSL, and color-name values.
+A responsive React color explorer and converter for browsing the standardized CSS named-color palette, adjusting RGB channels, and copying RGB, HEX, HSL, and exact color-name values.
 
 ## Features
 
-- Browse a predefined HTML color palette
+- Browse all 148 CSS named colors, including spelling aliases such as gray/grey
 - Adjust red, green, and blue channels with range controls
-- Convert the selected color to RGB, HEX, HSL, and a matching color name
+- Convert the selected color to RGB, HEX, HSL, and an exact matching CSS color name
 - Copy each value directly to the clipboard with a confirmation toast
+- Use keyboard-accessible color swatches, range controls, and copy buttons
 - Fixed branded header with a small-screen menu
 - Icon-only developer and support links in the footer
 - Floating scroll-to-top control
