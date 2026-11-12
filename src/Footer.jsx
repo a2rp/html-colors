@@ -19,7 +19,7 @@ export default function Footer() {
   return (
     <footer className="site-footer">
       <div className="site-footer__top">
-        <strong className="site-footer__brand"><img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Ashish Ranjan logo" />HTML Colors</strong>
+        <strong className="site-footer__brand"><img src={`${import.meta.env.BASE_URL}logo.png`} alt="Ashish Ranjan logo" />HTML Colors</strong>
         <nav className="site-footer__links" aria-label="Developer and support links">
           {links.map(([label, href, Icon]) => <a key={label} href={href} target="_blank" rel="noopener noreferrer" aria-label={label} title={label}><Icon aria-hidden="true" /></a>)}
         </nav>

@@ -35,7 +35,7 @@ export default function Header() {
     <header className="site-header">
       <div className="site-header__inner">
         <a className="site-header__brand" href="#colors" onClick={close}>
-          <img src={`${process.env.PUBLIC_URL}/logo.png`} alt="Ashish Ranjan logo" />
+          <img src={`${import.meta.env.BASE_URL}logo.png`} alt="Ashish Ranjan logo" />
           <span><small>COLOR TOOL</small><strong>HTML Colors</strong></span>
         </a>
         <nav id="main-navigation" className={`site-header__nav${open ? ' is-open' : ''}`} aria-label="Main navigation">

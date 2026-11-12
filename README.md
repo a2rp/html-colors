@@ -17,21 +17,26 @@ A responsive React color explorer and converter for browsing the standardized CS
 
 ## Tech Stack
 
-React, Create React App, Sass modules, Material UI, react-icons, and react-toastify.
+React, Vite, Sass modules, Vitest, Testing Library, react-icons, and react-toastify.
 
 ## Run locally
 
 ```bash
 npm install
-npm start
+npm run dev
 ```
+
+Use Node.js 20.19+ or 22.12+. Vite serves the app under `/html-colors/` to match its GitHub Pages path.
+
+Run the existing UI test with `npm test`.
 
 ## Deployment
 
 ```bash
-npm run build
 npm run deploy
 ```
+
+The deploy script builds the app and publishes `dist/` to the `gh-pages` branch.
 
 Live app: [https://a2rp.github.io/html-colors/](https://a2rp.github.io/html-colors/)
 
